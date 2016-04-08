@@ -1,0 +1,105 @@
+// Place all the styles related to the products controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+// apply styles to HTML elements
+// to make views framework-neutral
+
+html, body {
+	background-color: #eee;
+}
+main {
+  @extend .container;
+  background-color: #eee;
+  padding-bottom: 80px;
+  //width: 100%;
+  margin-top: 51px; // accommodate the navbar
+  }
+
+.header .container {
+	background: $md-blue;
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.header {
+	padding: ($padding * 1) 0;
+	background: $md-blue;
+	text-transform: uppercase;
+	color: $inverse-text;
+
+	h1 {
+	  font-weight: 900;
+	  height: 36px;
+	  margin: 0;
+	  line-height: 1;
+	  padding-left: 0;
+	}
+
+	.main-nav {
+	  line-height: 36px;
+	  margin-bottom: 0;
+
+	  li.divider {
+	    color: $grey;
+	  }
+
+	  a {
+	    text-decoration: none;
+	    color: $inverse-text;
+
+	    &:hover {
+	      color: $md-light-blue;
+	      border-bottom: ($border-size * 5) $border-type $grey;
+	      transition: border-color 0.2s ease;
+	    }
+	  }
+	}
+}
+
+.footer {
+	text-align: center;
+	color: $inverse-text;
+	padding-bottom: ($padding * 4);
+
+	.social-media {
+	  padding: $padding 0;
+
+	  a {
+	    padding: 0 ($padding - 0.5);
+	    color: $white;
+
+	    &:hover {
+	      color: $grey;
+	    }
+	  }
+	}
+}
+
+.footer .container {
+	background: $inverse-background;
+	padding: ($padding * 4) 0;
+}
+
+.btn {
+  border-radius: 0;
+}
+
+.btn-primary {
+  background: $md-pink;
+  border-color: $md-pink;
+  text-transform: uppercase;
+}
+
+.btn-primary:hover {
+  background: ($md-pink - #111);
+  border-color: ($md-pink - #111);
+}
+
+.products_index {
+	margin-top: 20px;
+}
+
+.slide-image {
+	height: 200px;
+}

@@ -1,0 +1,23 @@
+%h1 Listing admin_line_items
+
+%table
+  %thead
+    %tr
+      %th Product
+      %th Cart
+      %th
+      %th
+      %th
+
+  %tbody
+    - @admin_line_items.each do |admin_line_item|
+      %tr
+        %td= admin_line_item.product
+        %td= admin_line_item.cart
+        %td= link_to 'Show', admin_line_item
+        %td= link_to 'Edit', edit_admin_line_item_path(admin_line_item)
+        %td= link_to 'Destroy', admin_line_item, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Line item', new_admin_line_item_path

@@ -1,0 +1,41 @@
+%h1 Listing admin_products
+
+%table.table
+  %thead
+    %tr
+      %th User
+      %th Type
+      %th Color
+      %th Make
+      %th Size
+      %th Availability
+      %th Price
+      %th Material
+      %th Seasion
+      %th Description
+      %th Category
+      %th
+      %th
+      %th
+
+  %tbody
+    - @admin_products.each do |admin_product|
+      %tr
+        %td= admin_product.user
+        %td= admin_product.product_type
+        %td= admin_product.color
+        %td= admin_product.make
+        %td= admin_product.size
+        %td= admin_product.availability
+        %td= admin_product.price
+        %td= admin_product.material
+        %td= admin_product.seasion
+        %td= truncate admin_product.description
+        %td= admin_product.categories
+        %td= link_to 'Show', admin_product
+        %td= link_to 'Edit', edit_admin_product_path(admin_product)
+        %td= link_to 'Destroy', admin_product, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Product', new_admin_product_path

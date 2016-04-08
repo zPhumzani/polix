@@ -1,0 +1,20 @@
+.row.carousel-holder.text-center
+  .col-md-12
+    #carousel-example-generic.carousel.slide{ data: {ride: "carousel"}}
+      %ol.carousel-indicators
+        %li.active{data: {target: "#carousel-example-generic", slide: {to: "0"}}}
+        %li{data: {target: "#carousel-example-generic", slide: {to: "1"}}}
+        %li{data: {target: "#carousel-example-generic", slide: {to: "2"}}}
+
+      .carousel-inner
+        .item.active
+          = image_tag('15022011_012.jpg', class: "slide-image", alt: "")
+        .item
+          = image_tag('15022011_013.jpg', class: "slide-image", alt: "")
+        .item
+          = image_tag('15022011_014.jpg', class: "slide-image img-responsive", alt: "",)
+
+      %a{ class: "left carousel-control", href: "#carousel-example-generic", data: {slide: "prev"}}
+        %span.glyphicon.glyphicon-chevron-left
+      %a{ class: "right carousel-control", href: "#carousel-example-generic", data: {slide: "next"}}
+        %span.glyphicon.glyphicon-chevron-right

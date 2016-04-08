@@ -1,0 +1,35 @@
+%article
+  %article.col-md-6
+    = image_tag(@product.image, class: "img-responsive thumbnail")
+  
+  %article.col-md-6.text-center
+    .well
+      %h2= @product.product_type
+
+      %p= link_to 'Scroll to product details, material & care and sizing', '#details'
+
+      %p= number_to_currency @product.price
+      %p= button_to "Add to Cart", product_line_items_path(@product), class: 'btn btn-primary'
+
+  %article.col-md-12
+    .well#details
+      %h2 Product Description:
+      %p= @product.description
+ 
+      %h2 Material & care:
+      %p
+        %b Color:
+        = @product.color
+      %p
+        %b Material:
+        = @product.material
+      %p
+        %b Seasion:
+        = @product.seasion
+      %h2 Size & Fit
+      %p
+        %b Size:
+        = @product.size
+      %p
+        %b Availability:
+        = @product.availability

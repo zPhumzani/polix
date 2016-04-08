@@ -1,0 +1,18 @@
+= simple_form_for(Product.new) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :product_type
+    = f.input :color
+    = f.input :make
+    = f.input :size, collection: Product::SIZES
+    = f.input :availability
+    = f.input :price, as: :string
+    = f.input :material
+    = f.input :seasion
+    = f.input :description, as: :text, rows: 6
+    = f.input :image
+    = f.association :categories, input_html: {multiple: true}
+
+  .form-actions
+    = f.button :submit

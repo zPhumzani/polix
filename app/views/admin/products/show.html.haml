@@ -1,0 +1,39 @@
+%p#notice= notice
+
+%p
+  %b User:
+  = @admin_product.user
+%p
+  %b Type:
+  = @admin_product.type
+%p
+  %b Color:
+  = @admin_product.color
+%p
+  %b Make:
+  = @admin_product.make
+%p
+  %b Size:
+  = @admin_product.size
+%p
+  %b Availability:
+  = @admin_product.availability
+%p
+  %b Price:
+  = @admin_product.price
+%p
+  %b Material:
+  = @admin_product.material
+%p
+  %b Seasion:
+  = @admin_product.seasion
+%p
+  %b Description:
+  = @admin_product.description
+%p
+  %b Category:
+  = @admin_product.category
+
+= link_to 'Edit', edit_admin_product_path(@admin_product)
+\|
+= link_to 'Back', admin_products_path

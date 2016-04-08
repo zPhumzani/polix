@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @admin_order.name
+%p
+  %b Address:
+  = @admin_order.address
+%p
+  %b Email:
+  = @admin_order.email
+%p
+  %b Pay type:
+  = @admin_order.pay_type
+
+= link_to 'Edit', edit_admin_order_path(@admin_order)
+\|
+= link_to 'Back', admin_orders_path

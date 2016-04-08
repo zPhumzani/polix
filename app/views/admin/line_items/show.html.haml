@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Product:
+  = @admin_line_item.product
+%p
+  %b Cart:
+  = @admin_line_item.cart
+
+= link_to 'Edit', edit_admin_line_item_path(@admin_line_item)
+\|
+= link_to 'Back', admin_line_items_path

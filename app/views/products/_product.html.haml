@@ -1,0 +1,9 @@
+.entry.col-md-6
+  = link_to image_tag(product.image.url(:medium)), product
+  %h3= link_to product.product_type, product
+  %p= truncate(product.description, length: 120)
+  .price_line
+    %span.price= number_to_currency(product.price)
+    = button_to "Add to Cart", product_line_items_path(product),  class: 'btn btn-primary'
+
+

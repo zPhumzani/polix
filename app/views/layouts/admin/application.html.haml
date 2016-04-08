@@ -1,0 +1,28 @@
+!!!
+%html
+  %head
+    %meta{:name => "viewport", :content => "width=device-width, initial-scale=1.0"}
+    %title= content_for?(:title) ? yield(:title) : 'Polix Clothing'
+    %meta{:name => "description", :content => "#{content_for?(:description) ? yield(:description) : 'Polix Clothing'}"}
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  %body{class: "#{controller.controller_name}"}
+    %header#banner
+      = render 'layouts/header'
+    %main#columns{:role => "main"}
+      .row
+        .col-md-12#main
+          = render 'layouts/messages'
+        .col-md-3
+          - if user_signed_in?
+            %ul.nav
+              %li= link_to "Orders", admin_orders_path
+              %li= link_to "Products", admin_products_path
+              %li= link_to "Users", admin_users_path
+              %li= link_to "Logout", current_user, method: :delete
+
+        .col-md-9
+          = yield
+    %footer
+      = render 'layouts/footer'

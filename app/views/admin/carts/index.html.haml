@@ -1,0 +1,19 @@
+%h1 Listing admin_carts
+
+%table
+  %thead
+    %tr
+      %th
+      %th
+      %th
+
+  %tbody
+    - @admin_carts.each do |admin_cart|
+      %tr
+        %td= link_to 'Show', admin_cart
+        %td= link_to 'Edit', edit_admin_cart_path(admin_cart)
+        %td= link_to 'Destroy', admin_cart, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Cart', new_admin_cart_path

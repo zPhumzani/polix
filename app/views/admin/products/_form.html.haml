@@ -1,0 +1,18 @@
+= simple_form_for(@admin_product) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.association :user
+    = f.input :type
+    = f.input :color
+    = f.input :make
+    = f.input :size
+    = f.input :availability
+    = f.input :price
+    = f.input :material
+    = f.input :seasion
+    = f.input :description
+    = f.association :category
+
+  .form-actions
+    = f.button :submit
