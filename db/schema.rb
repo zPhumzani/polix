@@ -19,10 +19,11 @@ ActiveRecord::Schema.define(version: 20160407092524) do
   end
 
   create_table "categories", force: :cascade do |t|
-    t.string   "name",       limit: 50
+    t.string   "name",        limit: 50
+    t.string   "description"
     t.integer  "user_id"
-    t.datetime "created_at",            null: false
-    t.datetime "updated_at",            null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
   add_index "categories", ["user_id"], name: "index_categories_on_user_id"
