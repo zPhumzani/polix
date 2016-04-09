@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+ruby '2.3.0'
+
 gem 'haml-rails'
 gem 'bootstrap-sass'
 gem 'rails_layout'
