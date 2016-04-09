@@ -9,13 +9,17 @@
     = csrf_meta_tags
   %body{class: "#{controller.controller_name}"}
     %header#banner
+      = render 'layouts/main_header'
     %main.container{:role => "main"}
-      .col-md-8
-        = yield
-      .col-md-3
-        .panel.panel-default
-          .panel-heading
-            %h2 Order Summary
-          .panel-body
-            %p Shipping and additional costs are calculated based on the values you have entered.
-            = render @cart
+      .row
+        .col-lg-9.col-md-9.col-sm-12
+          = yield
+        .col-lg-3.col-md-3.col-sm-12
+          .panel.panel-default
+            .panel-heading
+              %h2 Order Summary
+            .panel-body
+              %p Shipping and additional costs are calculated based on the values you have entered.
+              = render @cart
+    %footer
+      = render 'layouts/main_footer'

@@ -74,6 +74,11 @@ class ProductsController < ApplicationController
     end
   end
 
+  def image 
+    @image = Product.find(params[:id])
+    send_data @image.file_contents, filename: @image.filename, type: @image.content_type, :diposition => "inline"
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_product
@@ -82,6 +87,6 @@ class ProductsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
-      params.require(:product).permit(:product_type, :color, :make, :size, :availability, :price, :material, :seasion, :description, :image, :category_ids => [])
+      params.require(:product).permit(:product_type, :color, :make, :size, :availability, :price, :material, :seasion, :description, :file, :category_ids => [])
     end
 end

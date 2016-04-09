@@ -9,14 +9,15 @@
     = csrf_meta_tags
   %body{class: "#{controller.controller_name}"}
     %header#banner
-      = render 'layouts/header'
+      = render 'layouts/main_header'
     %main#columns.container{:role => "main"}
-      .row
-        .col-md-12#main
-          = render 'layouts/messages'
-        .col-md-3#side
-          = render 'layouts/sidebar'
-        .col-md-9
-          = yield
-    %footer
-      = render 'layouts/footer'
+      #spacer
+        .row
+          .col-md-12#main
+            = render 'layouts/messages'
+          .col-md-3#side
+            = render 'layouts/sidebar'
+          .col-lg-9.col-md-9.col-sm-12
+            = yield
+    %footer.row
+      = render 'layouts/main_footer'

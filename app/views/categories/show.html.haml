@@ -1,7 +1,7 @@
-%header.box
-  %h2= @category.name
-  -#%p @category.description
-
-%article.row
-  = render @category.products
+.panel.panel-default
+  .panel-heading
+    %h2= @category.name
+    -#%p @category.description
+  .panel-body
+    = render @category.products
 

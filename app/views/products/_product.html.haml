@@ -1,9 +1,13 @@
-.entry.col-md-6
-  = link_to image_tag(product.image.url(:medium)), product
-  %h3= link_to product.product_type, product
-  %p= truncate(product.description, length: 120)
-  .price_line
-    %span.price= number_to_currency(product.price)
-    = button_to "Add to Cart", product_line_items_path(product),  class: 'btn btn-primary'
+.entry.col-lg-4.col-sm-4.hero-feature.text-center
+  .thumbnail
+    -#= link_to image_tag(product.image), product
+    - unless product.file_contents.blank?
+      %p
+        = image_tag(image_product_path(product), class: 'img-responsive')
+    %h3= link_to truncate(product.product_type), product
+    %p= truncate(product.description, length: 50)
+    .btn-group
+      = link_to number_to_currency(product.price),'', class: "btn btn-default"
+      = link_to "Buy", product_line_items_path(product), method: :post, class: 'btn btn-primary'
 
 

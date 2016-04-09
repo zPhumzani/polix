@@ -4,6 +4,6 @@
     %tr.total_line
       %td{colspan: 2}Total
       %td.total_cell= number_to_currency(cart.total_price)
-
-  = button_to 'Checkout', new_order_path, method: :get, class: 'btn btn-danger'
-  = button_to 'Empty Cart', cart, method: :delete, data: {confirm: "Are You Sure?"}, class: 'btn btn-success'
+  .btn-group
+    = link_to 'Checkout', new_order_path, method: :get, class: 'btn btn-danger btn-sm'
+    = link_to 'Empty Cart', cart, method: :delete, data: {confirm: "Are You Sure?"}, class: 'btn btn-success btn-sm'

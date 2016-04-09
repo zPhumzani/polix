@@ -11,6 +11,9 @@ class CreateProducts < ActiveRecord::Migration
       t.string :material
       t.string :seasion
       t.string :description
+      t.string :filename
+      t.string :content_type
+      t.binary :file_contents
 
       t.timestamps null: false
     end

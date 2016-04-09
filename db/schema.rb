@@ -57,16 +57,15 @@ ActiveRecord::Schema.define(version: 20160407092524) do
     t.string   "make"
     t.string   "size"
     t.string   "availability"
-    t.decimal  "price",              precision: 8, scale: 2
+    t.decimal  "price",         precision: 8, scale: 2
     t.string   "material"
     t.string   "seasion"
     t.string   "description"
-    t.datetime "created_at",                                 null: false
-    t.datetime "updated_at",                                 null: false
-    t.string   "image_file_name"
-    t.string   "image_content_type"
-    t.integer  "image_file_size"
-    t.datetime "image_updated_at"
+    t.string   "filename"
+    t.string   "content_type"
+    t.binary   "file_contents"
+    t.datetime "created_at",                            null: false
+    t.datetime "updated_at",                            null: false
   end
 
   add_index "products", ["user_id"], name: "index_products_on_user_id"

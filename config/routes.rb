@@ -16,9 +16,10 @@ Rails.application.routes.draw do
   resources :carts
   get 'sign_in' => 'sessions#new', as: :sign_in
 
-  resources :products do 
+  resources :products, only: [:index, :show] do 
     resources :line_items
     get :who_bought, on: :member
+    get 'image', on: :member
   end
 
   resources :categories

@@ -24,7 +24,7 @@ class Admin::ProductsController < Admin::ApplicationController
   # POST /admin/products
   # POST /admin/products.json
   def create
-    @admin_product = Product.new(admin_product_params)
+    @admin_product = current_user.products.build(admin_product_params)
 
     respond_to do |format|
       if @admin_product.save
@@ -69,6 +69,6 @@ class Admin::ProductsController < Admin::ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def admin_product_params
-      params.require(:product).permit(:user_id, :type, :color, :make, :size, :availability, :price, :material, :seasion, :description, :category_id)
+       params.require(:product).permit(:product_type, :color, :make, :size, :availability, :price, :material, :seasion, :description, :file, :category_ids => [])
     end
 end

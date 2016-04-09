@@ -1,8 +1,10 @@
 %article
-  %article.col-md-6
-    = image_tag(@product.image, class: "img-responsive thumbnail")
-  
-  %article.col-md-6.text-center
+  %article.col-md-4
+    -#= image_tag(@product.image, class: "img-responsive thumbnail")
+    - unless @product.file_contents.blank?
+      %p
+        = image_tag(image_product_path(@product), class: 'img-responsive')
+  %article.col-md-8.text-center
     .well
       %h2= @product.product_type
 
